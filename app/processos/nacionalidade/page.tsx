@@ -94,7 +94,7 @@ const [editError, setEditError] = useState('')
         new Set(
           rows
             .map((row) => row.current_status_name)
-            .filter(Boolean)
+            .filter((value): value is string => typeof value === 'string' && value.length > 0)
         )
       ).sort(),
     [rows]
@@ -106,7 +106,7 @@ const [editError, setEditError] = useState('')
         new Set(
           rows
             .map((row) => row.responsible_user_name)
-            .filter(Boolean)
+            .filter((value): value is string => typeof value === 'string' && value.length > 0)
         )
       ).sort(),
     [rows]
@@ -118,7 +118,7 @@ const [editError, setEditError] = useState('')
         new Set(
           rows
             .map((row) => row.product_name)
-            .filter(Boolean)
+            .filter((value): value is string => typeof value === 'string' && value.length > 0)
         )
       ).sort(),
     [rows]
@@ -130,7 +130,7 @@ const [editError, setEditError] = useState('')
         new Set(
           rows
             .map((row) => row.partner_name)
-            .filter(Boolean)
+            .filter((value): value is string => typeof value === 'string' && value.length > 0)
         )
       ).sort(),
     [rows]
@@ -142,7 +142,7 @@ const [editError, setEditError] = useState('')
         new Set(
           rows
             .map((row) => row.registry_office)
-            .filter(Boolean)
+            .filter((value): value is string => typeof value === 'string' && value.length > 0)
         )
       ).sort(),
     [rows]

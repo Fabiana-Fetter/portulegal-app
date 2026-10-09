@@ -99,7 +99,7 @@ if (dashboardError) {
   return
 }
 
-setDashboard(dashboardData)
+setDashboard(dashboardData as DashboardSummary | null)
 const { data: taskData, error: taskError } = await supabase
   .from('dashboard_tasks')
   .select(`
